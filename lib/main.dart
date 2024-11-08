@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'May Chat',
+      title: 'Chat App',
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
