@@ -1,3 +1,4 @@
+import 'package:chat_application/Pages/Room/RoomPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -44,7 +45,7 @@ class AuthController extends GetxController {
         );
       }
 
-      // Get.to(RoomPage(username: username.value));
+      Get.to(RoomPage(username: username.value));
     } catch (e) {
       Get.snackbar(
         'Error',
