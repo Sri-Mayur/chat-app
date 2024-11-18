@@ -28,7 +28,7 @@ class WelcomePage extends StatelessWidget {
                     ),
                     SizedBox(height: screenHeight * 0.02), // 2% spacing
                     Text(
-                      "Chit-Chat",
+                      "MayChat",
                       style: Theme.of(context)
                           .textTheme
                           .headlineLarge
