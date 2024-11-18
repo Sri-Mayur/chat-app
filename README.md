@@ -13,10 +13,10 @@
 ## Screenshots
 
 ### Welcome Screen
-![Welcome Screen](screenshots/welcome_screen.png)
+![Welcome Screen](lib/screenshots/welcome_screen.png)
 
 ### Welcome Screen 2
-![Welcome Screen](screenshots/welcome_screen2.png)
+![Welcome Screen](lib/screenshots/welcome_screen2.png)
 
 ### Chat Room
 ![Chat Room](lib/screenshots/chat_room.png)
