@@ -12,8 +12,6 @@
 
 ## Screenshots
 
-## Screenshots
-
 ### Welcome Screen
 ![Welcome Screen](screenshots/welcome_screen.png)
 
@@ -21,13 +19,13 @@
 ![Welcome Screen](screenshots/welcome_screen2.png)
 
 ### Chat Room
-![Chat Room](screenshots/chat_room.png)
+![Chat Room](lib/screenshots/chat_room.png)
 
 ### Chat Room 2
-![Chat Room](screenshots/chat_room2.png)
+![Chat Room](lib/screenshots/chat_room2.png)
 
 ### Login Screen
-![Dark Mode](screenshots/login_screen.png)
+![Login Screen](lib/screenshots/login_screen.png)
 
 ## Tech Stack
 
