@@ -12,13 +12,10 @@ class RoomPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-    final width = mediaQuery.size.width;
-    final height = mediaQuery.size.height;
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Chat Room - $username'),
+        backgroundColor: Theme.of(context).colorScheme.primary,
         centerTitle: true,
       ),
       body: Column(
@@ -48,33 +45,47 @@ class RoomPage extends StatelessWidget {
                     var message = snapshot.data!.docs[index];
                     bool isMe = message['username'] == username;
 
-                    return Align(
-                      alignment:
-                          isMe ? Alignment.centerRight : Alignment.centerLeft,
-                      child: Container(
-                        margin: EdgeInsets.symmetric(
-                            vertical: 4.0, horizontal: 8.0),
-                        padding: EdgeInsets.all(10.0),
-                        decoration: BoxDecoration(
-                          color: isMe ? Colors.blue : Colors.grey[300],
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              message['username'],
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: isMe ? Colors.white : Colors.black),
+                    return Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Align(
+                        alignment:
+                            isMe ? Alignment.centerRight : Alignment.centerLeft,
+                        child: Container(
+                          margin: EdgeInsets.symmetric(
+                              vertical: 4.0, horizontal: 8.0),
+                          padding: EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: isMe
+                                ? Theme.of(context).colorScheme.primary
+                                : Theme.of(context)
+                                    .colorScheme
+                                    .primaryContainer,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(12),
+                              topRight: Radius.circular(12),
+                              bottomLeft:
+                                  isMe ? Radius.circular(12) : Radius.zero,
+                              bottomRight:
+                                  isMe ? Radius.zero : Radius.circular(12),
                             ),
-                            SizedBox(height: 4),
-                            Text(
-                              message['text'],
-                              style: TextStyle(
-                                  color: isMe ? Colors.white : Colors.black),
-                            ),
-                          ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                message['username'],
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: isMe ? Colors.white : Colors.white),
+                              ),
+                              SizedBox(height: 4),
+                              Text(
+                                message['text'],
+                                style: TextStyle(
+                                    color: isMe ? Colors.white : Colors.white),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );
@@ -86,15 +97,26 @@ class RoomPage extends StatelessWidget {
 
           // Message input field
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(15.0),
             child: Row(
               children: [
                 Expanded(
                   child: TextField(
                     controller: _messageController,
                     decoration: InputDecoration(
-                      labelText: 'Type a message',
-                      border: OutlineInputBorder(),
+                      labelText: '     Type a message',
+                      filled: true,
+                      fillColor: Theme.of(context).colorScheme.primaryContainer,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: BorderSide(
+                            color: Theme.of(context).colorScheme.primary,
+                            width: 2.0),
+                      ),
                     ),
                   ),
                 ),
