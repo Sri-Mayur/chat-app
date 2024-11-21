@@ -68,7 +68,10 @@ class AuthPage extends StatelessWidget {
     final height = mediaQuery.size.height;
 
     return Scaffold(
-      appBar: AppBar(title: Text("Auth Page")),
+      appBar: AppBar(
+        title: Text("User Authentication"),
+        centerTitle: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
