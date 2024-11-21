@@ -14,8 +14,7 @@ class Slidebutton extends StatelessWidget {
       height: 50,
       child: SlideAction(
         onSubmit: () {
-          print("Navigating to AuthPage....");
-          Get.toNamed("/authPage");
+          Get.offNamed("/authPage");
         },
         text: "Slide to Start",
         textColor: Colors.grey[600], // Greyish text color
